@@ -1,10 +1,10 @@
-NAME = phone
+NAME = Moar
 
 CC = c++
 FLAGS = -Wall -Wextra -Werror  -std=c++98 # remove this
 
 
-SRC = phone.o search.o add.o
+SRC = main.cpp
 
 OBJ	= $(SRC:.c=.o)
 
@@ -13,7 +13,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(CC) $(OBJ) $(FLAGS) -o $(NAME)
 
-%.o: %.c phone.hpp
+%.o: %.cpp Zombie.hpp
 	$(CC) $(FLAGS)  -c $< -o $@
 
 clean:

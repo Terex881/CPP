@@ -1,19 +1,17 @@
-NAME = phone
+NAME = account
 
 CC = c++
 FLAGS = -Wall -Wextra -Werror  -std=c++98 # remove this
 
 
-SRC = phone.o search.o add.o
-
-OBJ	= $(SRC:.c=.o)
+OBJ = Account.o tests.o
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
 	$(CC) $(OBJ) $(FLAGS) -o $(NAME)
 
-%.o: %.c phone.hpp
+%.o: %.c Account.hpp
 	$(CC) $(FLAGS)  -c $< -o $@
 
 clean:

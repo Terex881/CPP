@@ -1,36 +1,37 @@
-#include "main.hpp"
+#include "phone.hpp"
+
 
 
 void  ft_set_lines(PhoneBook person, std::string word)
 {
-	int f_num_spc = 0;
-	int i = 0;
 	if (word.length() > 10)
 	{
-		std::cout << word.substr(0, 9);
+		for(int i = 0; i < 8; i++)
+			std::cout << word[i];
 		std::cout << ".|";
-
 	}
 	else
 	{
-		f_num_spc = 10 - word.length();
-		while(i++ < f_num_spc)
-			std::cout << " " ;
+		std::cout << std::setw(9);
 		std::cout  << word << "|";
 	}
 }
 
 void ft_search(PhoneBook person)
 {
-	std::cout << "  index   |first name| last name| nickname |" << std::endl;
-	for(int i = 0; i < person.index ; i++)
+	int i = 0;
+	std::cout << std::setw(10) << "Index|";
+	std::cout << std::setw(10) << "Fname|";
+	std::cout << std::setw(10) << "Lname|";
+	std::cout << std::setw(10) << "Nname|" << std::endl;
+
+	while(i < person.new_index && i < 8)
 	{
-		
-		ft_set_lines(person, std::to_string(i));
+		ft_set_lines(person, std::to_string(i + 1));
 		ft_set_lines(person, person.arr[i].first_name);
 		ft_set_lines(person, person.arr[i].last_name);
 		ft_set_lines(person, person.arr[i].nick_name);
 		std::cout << std::endl;
+		i++;
 	}
-
 }

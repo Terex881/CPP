@@ -1,19 +1,19 @@
-NAME = phone
+NAME = BRAIN
 
 CC = c++
 FLAGS = -Wall -Wextra -Werror  -std=c++98 # remove this
 
 
-SRC = phone.o search.o add.o
+SRC = main.cpp
 
-OBJ	= $(SRC:.c=.o)
+OBJ	= $(SRC:.cpp=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
 	$(CC) $(OBJ) $(FLAGS) -o $(NAME)
 
-%.o: %.c phone.hpp
+%.o: %.cpp
 	$(CC) $(FLAGS)  -c $< -o $@
 
 clean:

@@ -1,7 +1,8 @@
-#include "main.hpp"
+#include "phone.hpp"
 
 
 int PhoneBook::index = 0;
+int PhoneBook::new_index = 0;
 
 int main ()
 {

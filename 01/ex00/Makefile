@@ -1,19 +1,17 @@
-NAME = phone
+NAME = BraiiiiiiinnnzzzZ
 
 CC = c++
-FLAGS = -Wall -Wextra -Werror  -std=c++98 # remove this
+FLAG = -Wall -Wextra -Werror -std=c++98 # remove this
 
 
-SRC = phone.o search.o add.o
-
-OBJ	= $(SRC:.c=.o)
+OBJ = main.o  #newZombie.o randomChump.o
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
 	$(CC) $(OBJ) $(FLAGS) -o $(NAME)
 
-%.o: %.c phone.hpp
+%.o: %.c Zombie.hpp
 	$(CC) $(FLAGS)  -c $< -o $@
 
 clean:
