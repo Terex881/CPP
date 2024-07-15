@@ -5,8 +5,6 @@
 #include <string>
 
 
-
-
 class Zombie
 {
 
@@ -16,7 +14,7 @@ private:
 
 public:
 	void announce();
-	Zombie():n(0), name(""){}
+	Zombie();
 	Zombie(std::string set_name) : name(set_name)
 	{}
 };
@@ -24,6 +22,7 @@ public:
 
 
 
+Zombie* zombieHorde(int N, std::string name);
 
 
 

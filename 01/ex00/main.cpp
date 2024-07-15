@@ -2,17 +2,6 @@
 
 
 
-Zombie* newZombie( std::string name)
-{
-	Zombie *wlaker = new Zombie(name);
-	return wlaker;
-}
-
-void randomChump( std::string name)
-{
-	Zombie b(name);
-	b.announce();
-}
 
 int main()
 {

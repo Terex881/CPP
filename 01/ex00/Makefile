@@ -1,17 +1,20 @@
 NAME = BraiiiiiiinnnzzzZ
 
+
 CC = c++
-FLAG = -Wall -Wextra -Werror -std=c++98 # remove this
+FLAGS = -Wall -Wextra -Werror  -std=c++98 # remove this
 
 
-OBJ = main.o  #newZombie.o randomChump.o
+SRC = main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
+
+OBJ	= $(SRC:.cpp=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
 	$(CC) $(OBJ) $(FLAGS) -o $(NAME)
 
-%.o: %.c Zombie.hpp
+%.o: %.cpp Zombie.hpp
 	$(CC) $(FLAGS)  -c $< -o $@
 
 clean:

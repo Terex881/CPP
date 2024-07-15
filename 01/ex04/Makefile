@@ -1,10 +1,10 @@
 NAME = Sed
 
 CC = c++
-FLAGS = #-Wall -Wextra -Werror  -std=c++98 # remove this
+FLAGS = -Wall -Wextra -Werror  -std=c++98 # remove this
 
 
-SRC = main.cpp
+SRC = main.cpp sed.cpp
 
 OBJ	= $(SRC:.cpp=.o)
 

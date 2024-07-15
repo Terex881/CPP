@@ -16,13 +16,11 @@ public:
 	void announce();
 	Zombie(std::string set_name) : name(set_name)
 	{}
+	~Zombie();
 };
 
 
-void Zombie::announce()
-{
-	std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
-}
+
 
 
 	Zombie* newZombie( std::string name );
