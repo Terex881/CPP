@@ -1,17 +1,16 @@
 NAME = megaphone
 
 CC = c++
-FLAG = -Wall -Wextra -Werror -std=c++98 # remove this
-
+FLAG = -Wall -Wextra -Werror -std=c++98
 
 OBJ = megaphone.o
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(OBJ) $(FLAGS) -o $(NAME)
+	$(CC) $(OBJ) $(FLAGS) -o $@
 
-%.o: %.c
+%.o: %.cpp
 	$(CC) $(FLAGS)  -c $< -o $@
 
 clean:

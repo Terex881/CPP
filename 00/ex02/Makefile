@@ -1,17 +1,17 @@
 NAME = account
 
 CC = c++
-FLAGS = -Wall -Wextra -Werror  -std=c++98 # remove this
 
+FLAG = -Wall -Wextra -Werror -std=c++98
 
-OBJ = Account.o tests.o
+OBJ =  Account.o tests.o
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(OBJ) $(FLAGS) -o $(NAME)
+	$(CC) $(OBJ) $(FLAGS) -o $@
 
-%.o: %.c Account.hpp
+%.o: %.cpp Account.hpp
 	$(CC) $(FLAGS)  -c $< -o $@
 
 clean:

@@ -2,8 +2,10 @@
 # define PHONE_HPP
 
 #include <iostream>
+
 #include <string>
 #include <iomanip>
+
 
 
 
@@ -17,20 +19,17 @@ class Contact
 		std::string phone_number;
 		std::string darkest_secret;
 };
+
 class PhoneBook
 {
 	public:
 		Contact arr[8];
 		static int index;
 		static int new_index;
-
 };
 
 
-void ft_add(PhoneBook& person);
-void ft_search(PhoneBook person);
-
-
-
+void	Add(PhoneBook& person);
+void	Search(PhoneBook person);
 
 #endif

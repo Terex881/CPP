@@ -1,4 +1,3 @@
-#include <cctype>
 #include <iostream>
 #include <string>
 
@@ -8,8 +7,8 @@ int main(int ac, char **av)
 	int i = 1;
 	int j;
 	if (ac == 1)
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *"; // check \n
-	if (ac > 1)
+		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
+	else if (ac > 1)
 	{
 		while(i < ac)
 		{

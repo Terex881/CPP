@@ -1,8 +1,6 @@
 #include "phone.hpp"
 
-
-
-void  ft_set_lines(PhoneBook person, std::string word)
+void  SetLines(PhoneBook person, std::string word)
 {
 	if (word.length() > 10)
 	{
@@ -17,7 +15,7 @@ void  ft_set_lines(PhoneBook person, std::string word)
 	}
 }
 
-void ft_search(PhoneBook person)
+void Search(PhoneBook person)
 {
 	int i = 0;
 	std::cout << std::setw(10) << "Index|";
@@ -27,10 +25,10 @@ void ft_search(PhoneBook person)
 
 	while(i < person.new_index && i < 8)
 	{
-		ft_set_lines(person, std::to_string(i + 1));
-		ft_set_lines(person, person.arr[i].first_name);
-		ft_set_lines(person, person.arr[i].last_name);
-		ft_set_lines(person, person.arr[i].nick_name);
+		SetLines(person, std::to_string(i + 1));
+		SetLines(person, person.arr[i].first_name);
+		SetLines(person, person.arr[i].last_name);
+		SetLines(person, person.arr[i].nick_name);
 		std::cout << std::endl;
 		i++;
 	}
