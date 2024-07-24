@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   add.cpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sdemnati <salaminty123@gmail.com>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/07/24 17:48:57 by sdemnati          #+#    #+#             */
+/*   Updated: 2024/07/24 17:48:58 by sdemnati         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "phone.hpp"
 
 std::string SetInput(std::string message)
@@ -14,8 +26,8 @@ std::string SetInput(std::string message)
 
 int OnlySpaces(std::string line)
 {
-
 	int i = 0;
+
 	while(!line.empty() && line[i] == ' ')
 		i++;
 	if(!line.empty() && line[i] == '\0')
@@ -23,36 +35,36 @@ int OnlySpaces(std::string line)
 	return 1;
 }
 
-int CheckEmpty(PhoneBook person)
+int PhoneBook::CheckEmpty(PhoneBook book)
 {
-	if (person.arr[person.index].first_name.empty() || !OnlySpaces(person.arr[person.index].first_name))
+	if (book.person[book.index].GetFirst().empty() || !OnlySpaces(book.person[book.index].GetFirst()))
 		return (1);
-	if (person.arr[person.index].last_name.empty() || !OnlySpaces(person.arr[person.index].last_name))
+	if (book.person[book.index].GetLast().empty() || !OnlySpaces(book.person[book.index].GetLast()))
 		return (1);
-	if (person.arr[person.index].nick_name.empty() || !OnlySpaces(person.arr[person.index].nick_name))
+	if (book.person[book.index].GetNick().empty() || !OnlySpaces(book.person[book.index].GetNick()))
 		return (1);
-	if (person.arr[person.index].phone_number.empty() || !OnlySpaces(person.arr[person.index].phone_number))
+	if (book.person[book.index].GetNumber().empty() || !OnlySpaces(book.person[book.index].GetNumber()))
 		return (1);
-	if (person.arr[person.index].darkest_secret.empty() || !OnlySpaces(person.arr[person.index].darkest_secret))
+	if (book.person[book.index].GetSecret().empty() || !OnlySpaces(book.person[book.index].GetSecret()))
 		return (1);
 	else
 		return (0);
 }
 
-void Add(PhoneBook& person)
+void PhoneBook::Add(PhoneBook& book)
 {
-	if (person.index >= 8)
-		person.index = person.index - 8;
+	if (book.index >= 8)
+		book.index = book.index - 8;
 
-	person.arr[person.index].first_name = SetInput("first name : ");
-	person.arr[person.index].last_name = SetInput("last name : ");
-	person.arr[person.index].nick_name = SetInput("nick name : ");
-	person.arr[person.index].phone_number = SetInput("phone number : ");
-	person.arr[person.index].darkest_secret = SetInput("darkest secret : ");
+	book.person[book.index].SetFirst(SetInput("first name : "));
+	book.person[book.index].SetLast(SetInput("last name : "));
+	book.person[book.index].SetNick(SetInput("nick name : ")) ;
+	book.person[book.index].SetNumber(SetInput("phone number : ")) ;
+	book.person[book.index].SetSecret(SetInput("darkest secret : ")) ;
 
-	if (CheckEmpty(person) == 0)
+	if (CheckEmpty(book) == 0)
 	{
-		person.new_index++;
-		person.index++;
+		book.new_index++;
+		book.index++;
 	}
 }

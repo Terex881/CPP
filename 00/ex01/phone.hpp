@@ -1,35 +1,61 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   phone.hpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sdemnati <salaminty123@gmail.com>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/07/24 17:49:06 by sdemnati          #+#    #+#             */
+/*   Updated: 2024/07/24 17:49:07 by sdemnati         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PHONE_HPP
 # define PHONE_HPP
 
 #include <iostream>
-
 #include <string>
 #include <iomanip>
 
 
 
-
-
 class Contact
 {
-	public:
+	private:
 		std::string first_name;
 		std::string last_name;
 		std::string nick_name;
 		std::string phone_number;
 		std::string darkest_secret;
+	public:
+		std::string GetFirst();
+		std::string GetLast();
+		std::string GetNick();
+		std::string GetNumber();
+		std::string GetSecret();
+
+		void SetFirst(std::string name);
+		void SetLast(std::string name);
+		void SetNick(std::string name);
+		void SetNumber(std::string name);
+		void SetSecret(std::string name);
 };
 
 class PhoneBook
 {
-	public:
-		Contact arr[8];
+	private:
+		Contact person[8];
 		static int index;
 		static int new_index;
+
+	public:
+		static int CheckEmpty(PhoneBook person);
+		static void	Add(PhoneBook& person);
+		static void	Search(PhoneBook person);
+
 };
 
+std::string SetInput(std::string message);
 
-void	Add(PhoneBook& person);
-void	Search(PhoneBook person);
 
 #endif

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   search.cpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sdemnati <salaminty123@gmail.com>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/07/24 17:49:09 by sdemnati          #+#    #+#             */
+/*   Updated: 2024/07/24 17:49:10 by sdemnati         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "phone.hpp"
 
 void  SetLines(PhoneBook person, std::string word)
@@ -15,7 +27,7 @@ void  SetLines(PhoneBook person, std::string word)
 	}
 }
 
-void Search(PhoneBook person)
+void PhoneBook::Search(PhoneBook book)
 {
 	int i = 0;
 	std::cout << std::setw(10) << "Index|";
@@ -23,12 +35,12 @@ void Search(PhoneBook person)
 	std::cout << std::setw(10) << "Lname|";
 	std::cout << std::setw(10) << "Nname|" << std::endl;
 
-	while(i < person.new_index && i < 8)
+	while(i < book.new_index && i < 8)
 	{
-		SetLines(person, std::to_string(i + 1));
-		SetLines(person, person.arr[i].first_name);
-		SetLines(person, person.arr[i].last_name);
-		SetLines(person, person.arr[i].nick_name);
+		SetLines(book, std::to_string(i + 1));
+		SetLines(book, book.person[i].GetFirst());
+		SetLines(book, book.person[i].GetLast());
+		SetLines(book, book.person[i].GetNick());
 		std::cout << std::endl;
 		i++;
 	}
