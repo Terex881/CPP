@@ -8,10 +8,10 @@ OBJ = megaphone.o
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(OBJ) $(FLAGS) -o $@
+	$(CC) $(OBJ) $(FLAG) -o $@
 
 %.o: %.cpp
-	$(CC) $(FLAGS)  -c $< -o $@
+	$(CC) $(FLAG)  -c $< -o $@
 
 clean:
 	rm -rf $(OBJ)

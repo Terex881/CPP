@@ -6,7 +6,7 @@
 /*   By: sdemnati <salaminty123@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 17:48:57 by sdemnati          #+#    #+#             */
-/*   Updated: 2024/07/24 17:48:58 by sdemnati         ###   ########.fr       */
+/*   Updated: 2024/07/25 14:48:12 by sdemnati         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ std::string SetInput(std::string message)
 
 	std::cout << message;
 	std::getline(std::cin, line);
-
 	if (std::cin.eof())
 		exit(0);
 	return line;

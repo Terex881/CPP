@@ -6,7 +6,7 @@
 /*   By: sdemnati <salaminty123@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 17:49:06 by sdemnati          #+#    #+#             */
-/*   Updated: 2024/07/24 17:49:07 by sdemnati         ###   ########.fr       */
+/*   Updated: 2024/07/25 14:09:53 by sdemnati         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,18 +44,20 @@ class Contact
 class PhoneBook
 {
 	private:
-		Contact person[8];
-		static int index;
-		static int new_index;
+		Contact		person[8];
+		static	int	index;
+		static	int	new_index;
 
 	public:
-		static int CheckEmpty(PhoneBook person);
-		static void	Add(PhoneBook& person);
-		static void	Search(PhoneBook person);
+		static	int		CheckEmpty(PhoneBook person);
+		static	void	Add(PhoneBook& person);
+		static	void	Print(PhoneBook book, int i, int flag);
+		static	void	Search(PhoneBook person);
+		static	void	print2(PhoneBook book, int n, int flag);
 
 };
 
-std::string SetInput(std::string message);
+std::string	SetInput(std::string message);
 
 
 #endif
