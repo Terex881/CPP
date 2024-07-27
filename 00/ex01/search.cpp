@@ -6,11 +6,11 @@
 /*   By: sdemnati <salaminty123@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 17:49:09 by sdemnati          #+#    #+#             */
-/*   Updated: 2024/07/25 14:47:34 by sdemnati         ###   ########.fr       */
+/*   Updated: 2024/07/27 11:28:25 by sdemnati         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phone.hpp"
+#include "PhoneBook.hpp"
 
 void  SetLines(std::string word)
 {
@@ -31,29 +31,27 @@ void PrintInfo(int flag)
 {
 	std::cout << std::setw(10) << "   Index|";
 	std::cout << std::setw(10) << "FisrName|";
-	if (flag == 1)
+	std::cout << std::setw(10) << "LastName|";
+	std::cout << std::setw(10) << "NickNmae|";
+
+	if(flag == 2)
 	{
-		std::cout << std::setw(10) << "LastName|";
-		std::cout << std::setw(10) << "NickNmae|" << std::endl;
-	}
-	else if(flag == 2)
-	{
-		std::cout << std::setw(10) << "LastName|";
-		std::cout << std::setw(10) << "NickNmae|";
+
 		std::cout << std::setw(10) << "PhoneNum|";
-		std::cout << std::setw(10) << "DarkSecr|" << std::endl;
+		std::cout << std::setw(10) << "DarkSecr|";
 	}
+	std::cout << std::endl;
 }
 
-void PhoneBook::print2(PhoneBook book, int n, int flag)
+void printFull(Contact *person, int n, int flag)
 {
-	SetLines(book.person[n].GetFirst());
-	SetLines(book.person[n].GetLast());
-	SetLines(book.person[n].GetNick());
+	SetLines(person[n].GetFirst());
+	SetLines(person[n].GetLast());
+	SetLines(person[n].GetNick());
 	if (flag == 1)
 	{
-		SetLines(book.person[n].GetNumber());
-		SetLines(book.person[n].GetNick());
+		SetLines(person[n].GetNumber());
+		SetLines(person[n].GetSecret());
 	}
 	std::cout << std::endl;
 
@@ -72,7 +70,7 @@ void PhoneBook::Search(PhoneBook book)
 	while(i < book.new_index && i < 8)
 	{
 		SetLines(std::to_string(i + 1));
-		print2(book, i, 2);
+		printFull(book.person, i, 2);
 		std::cout << "----------------------------------------" << std::endl;
 		i++;
 	}
@@ -92,9 +90,8 @@ void PhoneBook::Search(PhoneBook book)
 		std::cout << "------------------------------------------------------------" << std::endl;
 		PrintInfo(2);
 		std::cout << "------------------------------------------------------------" << std::endl;
-
 		SetLines(std::to_string(number));
-		print2(book, number - 1, 1);
+		printFull(book.person, number - 1, 1);
 		std::cout << "------------------------------------------------------------" << std::endl;
 	}
 	return ;

@@ -1,11 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sdemnati <salaminty123@gmail.com>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/07/27 14:41:03 by sdemnati          #+#    #+#             */
+/*   Updated: 2024/07/27 21:00:11 by sdemnati         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Harl.hpp"
 
 std::string  Harl::kind[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 
 void Harl::complain(std::string level)
 {
-	static void (Harl::*ptr[4]) (void) = {&Harl::debug,\
-		&Harl::info, &Harl::warning, &Harl::error};
+	// static void (Harl::*ptr[4]) (void) = {&Harl::debug,\
+	// 	&Harl::info, &Harl::warning, &Harl::error};
 	int i = 0;
 	while(i < 4 && kind[i] != level)
 		i++;

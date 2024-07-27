@@ -1,27 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sdemnati <salaminty123@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/27 14:40:27 by sdemnati          #+#    #+#             */
-/*   Updated: 2024/07/27 20:12:58 by sdemnati         ###   ########.fr       */
+/*   Created: 2024/07/24 17:49:06 by sdemnati          #+#    #+#             */
+/*   Updated: 2024/07/27 17:52:27 by sdemnati         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Sed.hpp"
+#ifndef PHONEBOOK_HPP
+# define PHONEBOOK_HPP
+
+#include <iostream>
+#include <iomanip>
+#include "Contact.hpp"
 
 
-int main(int ac, char **av)
+
+
+class PhoneBook
 {
-	
-	if (ac != 4)
-		return (std::cout << "Incorrect Argument's Number", 1);
-	if (!av[2][0])
-		return (std::cout << "Empty Argument", 1);
-	sed(av);
-	return (0);
+	private:
+		Contact		person[8];
+		static	int	index;
+		static	int	new_index;
 
+	public:
+		void	Add(PhoneBook& book);
+		void	Search(PhoneBook book);
 
-}
+};
+
+#endif

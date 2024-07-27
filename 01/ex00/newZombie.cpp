@@ -1,10 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sdemnati <salaminty123@gmail.com>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/07/27 14:39:24 by sdemnati          #+#    #+#             */
+/*   Updated: 2024/07/27 14:39:25 by sdemnati         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Zombie.hpp"
 
 
 
 Zombie* newZombie( std::string name)
 {
-	Zombie *wlaker = new Zombie(name);
-	return wlaker;
+	Zombie *walker = new Zombie(name);
+
+
+	return walker;
 }
 

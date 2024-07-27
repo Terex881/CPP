@@ -1,20 +1,17 @@
 NAME = Sed
 
 CC = c++
-FLAGS = -Wall -Wextra -Werror  -std=c++98 # remove this
+FLAG = -Wall -Wextra -Werror -std=c++98
 
-
-SRC = main.cpp sed.cpp
-
-OBJ	= $(SRC:.cpp=.o)
+OBJ = main.o Sed.o
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(OBJ) $(FLAGS) -o $(NAME)
+	$(CC) $(OBJ) $(FLAG) -o $@
 
-%.o: %.cpp
-	$(CC) $(FLAGS)  -c $< -o $@
+%.o: %.cpp Sed.hpp
+	$(CC) $(FLAG)  -c $< -o $@
 
 clean:
 	rm -rf $(OBJ)

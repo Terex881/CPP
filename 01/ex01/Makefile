@@ -1,20 +1,17 @@
 NAME = Moar
 
 CC = c++
-FLAGS = -Wall -Wextra -Werror  -std=c++98 # remove this
+FLAG = -Wall -Wextra -Werror -std=c++98
 
-
-SRC = main.cpp Zombie.cpp zombieHorde.cpp
-
-OBJ	= $(SRC:.cpp=.o)
+OBJ = main.o Zombie.o zombieHorde.o
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(OBJ) $(FLAGS) -o $(NAME)
+	$(CC) $(OBJ) $(FLAG) -o $@
 
 %.o: %.cpp Zombie.hpp
-	$(CC) $(FLAGS)  -c $< -o $@
+	$(CC) $(FLAG)  -c $< -o $@
 
 clean:
 	rm -rf $(OBJ)

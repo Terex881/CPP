@@ -6,11 +6,12 @@
 /*   By: sdemnati <salaminty123@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 17:48:57 by sdemnati          #+#    #+#             */
-/*   Updated: 2024/07/25 14:48:12 by sdemnati         ###   ########.fr       */
+/*   Updated: 2024/07/27 11:27:35 by sdemnati         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phone.hpp"
+#include "PhoneBook.hpp"
+
 
 std::string SetInput(std::string message)
 {
@@ -34,17 +35,17 @@ int OnlySpaces(std::string line)
 	return 1;
 }
 
-int PhoneBook::CheckEmpty(PhoneBook book)
+int CheckEmpty(Contact *person, int i)
 {
-	if (book.person[book.index].GetFirst().empty() || !OnlySpaces(book.person[book.index].GetFirst()))
+	if (person[i].GetFirst().empty() || !OnlySpaces(person[i].GetFirst()))
 		return (1);
-	if (book.person[book.index].GetLast().empty() || !OnlySpaces(book.person[book.index].GetLast()))
+	if (person[i].GetLast().empty() || !OnlySpaces(person[i].GetLast()))
 		return (1);
-	if (book.person[book.index].GetNick().empty() || !OnlySpaces(book.person[book.index].GetNick()))
+	if (person[i].GetNick().empty() || !OnlySpaces(person[i].GetNick()))
 		return (1);
-	if (book.person[book.index].GetNumber().empty() || !OnlySpaces(book.person[book.index].GetNumber()))
+	if (person[i].GetNumber().empty() || !OnlySpaces(person[i].GetNumber()))
 		return (1);
-	if (book.person[book.index].GetSecret().empty() || !OnlySpaces(book.person[book.index].GetSecret()))
+	if (person[i].GetSecret().empty() || !OnlySpaces(person[i].GetSecret()))
 		return (1);
 	else
 		return (0);
@@ -61,7 +62,7 @@ void PhoneBook::Add(PhoneBook& book)
 	book.person[book.index].SetNumber(SetInput("phone number : ")) ;
 	book.person[book.index].SetSecret(SetInput("darkest secret : ")) ;
 
-	if (CheckEmpty(book) == 0)
+	if (CheckEmpty(book.person, book.index) == 0)
 	{
 		book.new_index++;
 		book.index++;

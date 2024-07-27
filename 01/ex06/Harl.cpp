@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Harl.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sdemnati <salaminty123@gmail.com>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/07/27 14:40:56 by sdemnati          #+#    #+#             */
+/*   Updated: 2024/07/27 18:34:58 by sdemnati         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Harl.hpp"
 
-void Harl::debug()
+void Harl::debug(void)
 {
 	std::cout <<  "[ DEBUG ]" << std::endl;
 
@@ -10,7 +22,7 @@ void Harl::debug()
 	std::cout << std::endl;
 }
 
-void Harl::info()
+void Harl::info(void)
 {
 	std::cout <<  "[ INFO ]" << std::endl;
 
@@ -20,7 +32,7 @@ void Harl::info()
 	std::cout << std::endl;
 }
 
-void Harl::error()
+void Harl::error(void)
 {
 	std::cout <<  "[ ERROR ]" << std::endl;
 
@@ -28,7 +40,7 @@ void Harl::error()
 	std::cout << std::endl;
 }
 
-void Harl::warning()
+void Harl::warning(void)
 {
 	std::cout <<  "[ WARNING ]" << std::endl;
 

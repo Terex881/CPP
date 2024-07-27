@@ -1,14 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sed.hpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sdemnati <salaminty123@gmail.com>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/07/27 14:40:36 by sdemnati          #+#    #+#             */
+/*   Updated: 2024/07/27 17:51:49 by sdemnati         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 
 #ifndef SED_HPP
 #define SED_HPP
 
-#include <algorithm>
-#include <cstddef>
-#include <cstring>
+
+
+
 #include <iostream>
-#include <string>
 #include <fstream>
 
-
 int sed(char **av);
+
 #endif

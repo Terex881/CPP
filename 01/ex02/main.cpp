@@ -1,6 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sdemnati <salaminty123@gmail.com>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/07/27 14:39:55 by sdemnati          #+#    #+#             */
+/*   Updated: 2024/07/27 14:39:56 by sdemnati         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <iostream>
-#include <ostream>
-#include <string>
 
 
 
@@ -10,6 +20,7 @@ int main()
 	str =  "HI THIS IS BRAIN";
 
 	std::cout << str << std::endl;
+
 	std::string *strPTR = &str;
 	std::string &strREF = str;
 

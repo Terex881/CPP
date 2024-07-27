@@ -6,11 +6,11 @@
 /*   By: sdemnati <salaminty123@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 17:49:03 by sdemnati          #+#    #+#             */
-/*   Updated: 2024/07/25 14:16:30 by sdemnati         ###   ########.fr       */
+/*   Updated: 2024/07/27 11:27:29 by sdemnati         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phone.hpp"
+#include "PhoneBook.hpp"
 
 int PhoneBook::index = 0;
 int PhoneBook::new_index = 0;
@@ -24,6 +24,7 @@ int main (int ac, char **av)
 		return (1);
 	std::cout << "[ WELCOME TO MY AWESOME PHONBOOK ]" << std::endl;
 	std::cout << "----------------------------------" << std::endl;
+
 	while(1)
 	{
 		std::cout << "ADD or SEARCH or EXIT" << std::endl;
@@ -32,9 +33,9 @@ int main (int ac, char **av)
 		if (line == "EXIT" || std::cin.eof())
 			break;
 		else if (line == "ADD")
-			PhoneBook::Add(book);
+			book.Add(book);
 		else if (line == "SEARCH")
-			PhoneBook::Search(book);
+			book.Search(book);
 
 	}
 }

@@ -2,7 +2,7 @@ NAME = phone
 
 CC = c++ -g
 
-FLAG = -Wall -Wextra -Werror -std=c++98
+FLAG = -Wall -Wextra -Wer REMOVE EXIT ror -std=c++98
 
 OBJ =  phone.o search.o add.o get_set.o
 
@@ -11,7 +11,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(CC) $(OBJ) $(FLAG) -o $@
 
-%.o: %.cpp phone.hpp
+%.o: %.cpp PhoneBook.hpp Contact.hpp
 	$(CC) $(FLAG)  -c $< -o $@
 
 clean:

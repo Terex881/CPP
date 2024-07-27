@@ -1,32 +1,22 @@
-#include "harl.hpp"
-#include <string>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sdemnati <salaminty123@gmail.com>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/07/27 14:40:50 by sdemnati          #+#    #+#             */
+/*   Updated: 2024/07/27 18:39:35 by sdemnati         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-
-std::string  Harl::kind[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-
-
-
-void Harl::complain(std::string level)
-{
-	static void (Harl::*ptr[4]) (void) = {&Harl::debug,\
-		&Harl::info, &Harl::warning, &Harl::error};
-	int i = 0;
-	while(i < 4 && kind[i] != level)
-		i++;
-	if (i == 4)
-	{
-		std::cout << "invalid input" << std::endl;
-		return;
-	}
-
-	(this->*ptr[i])();
-}
+#include "Harl.hpp"
 
 
 int main()
 {
 
 	Harl h;
-	h.complain("DEBUG");
+	h.complain("ERROR");
 
 }

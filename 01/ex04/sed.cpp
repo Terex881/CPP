@@ -1,4 +1,16 @@
-#include "sed.hpp"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sed.cpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sdemnati <salaminty123@gmail.com>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/07/27 14:40:33 by sdemnati          #+#    #+#             */
+/*   Updated: 2024/07/27 20:16:06 by sdemnati         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "Sed.hpp"
 
 int sed(char **av)
 {
@@ -18,6 +30,7 @@ int sed(char **av)
 
 	while(std::getline(old_file, buffer))
 	{
+		buffer += '\n';
 		pos = buffer.find(old_word);
 		while (pos != std::string::npos)
 		{
@@ -28,6 +41,6 @@ int sed(char **av)
 		new_file << buffer << std::endl;
 	}
 	old_file.close();
-	new_file.close();
+	new_file.close(); // check if are already closed or not 
 	return (0);
 }
