@@ -1,11 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sdemnati <salaminty123@gmail.com>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/07/28 13:39:25 by sdemnati          #+#    #+#             */
+/*   Updated: 2024/07/28 13:39:35 by sdemnati         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Fixed.hpp"
-#include <filesystem>
-
-
 
 int  const Fixed::frac_bits = 8;
-
-
 
 Fixed::~Fixed()
 {
@@ -28,7 +35,6 @@ int	Fixed::getRawBits() const
 	std::cout << "getRawBits member function called" << std::endl;
 	return (this->fixed_point);
 }
-
 
 Fixed	&Fixed::operator= (const Fixed& src)
 {

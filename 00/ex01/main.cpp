@@ -1,19 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phone.cpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sdemnati <salaminty123@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/24 17:49:03 by sdemnati          #+#    #+#             */
-/*   Updated: 2024/07/27 11:27:29 by sdemnati         ###   ########.fr       */
+/*   Created: 2024/07/29 18:00:58 by sdemnati          #+#    #+#             */
+/*   Updated: 2024/07/30 19:33:54 by sdemnati         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
-
-int PhoneBook::index = 0;
-int PhoneBook::new_index = 0;
 
 int main (int ac, char **av)
 {
@@ -33,9 +30,9 @@ int main (int ac, char **av)
 		if (line == "EXIT" || std::cin.eof())
 			break;
 		else if (line == "ADD")
-			book.Add(book);
+			book.add(book);
 		else if (line == "SEARCH")
-			book.Search(book);
+			book.search(book);
 
 	}
 }

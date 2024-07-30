@@ -6,7 +6,7 @@
 /*   By: sdemnati <salaminty123@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 17:49:06 by sdemnati          #+#    #+#             */
-/*   Updated: 2024/07/27 17:52:27 by sdemnati         ###   ########.fr       */
+/*   Updated: 2024/07/30 19:34:44 by sdemnati         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,6 @@
 #include <iomanip>
 #include "Contact.hpp"
 
-
-
-
 class PhoneBook
 {
 	private:
@@ -28,9 +25,14 @@ class PhoneBook
 		static	int	new_index;
 
 	public:
-		void	Add(PhoneBook& book);
-		void	Search(PhoneBook book);
-
+		void		add(PhoneBook& book);
+		void		search(PhoneBook book);
+		std::string setInput(std::string message);
+		int 		onlySpaces(std::string line);
+		int 		checkEmpty(Contact *person, int i);
+		void		setLines(std::string word);
+		void 		printInfo(int flag);
+		void 		printFull(PhoneBook book, int n, int flag);
 };
 
 #endif

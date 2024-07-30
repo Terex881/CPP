@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sdemnati <salaminty123@gmail.com>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/07/28 13:47:16 by sdemnati          #+#    #+#             */
+/*   Updated: 2024/07/28 13:47:20 by sdemnati         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Fixed.hpp"
 
 
@@ -10,7 +22,7 @@ int main( void )
 	std::cout << a << std::endl;
 	std::cout << a++ << std::endl;
 	std::cout << a << std::endl;
-	// std::cout << "2a is " << --a << std::endl;
+	
 	std::cout << b << std::endl;
 	std::cout << Fixed::max( a, b ) << std::endl;
 	return 0;

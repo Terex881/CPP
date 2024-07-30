@@ -1,9 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sdemnati <salaminty123@gmail.com>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/07/28 13:45:44 by sdemnati          #+#    #+#             */
+/*   Updated: 2024/07/28 13:59:37 by sdemnati         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FIXED_HPP
 #define FIXED_HPP
 
-#include <atomic>
+
 #include <iostream>
-#include <string>
 #include <cmath>
 
 
@@ -51,28 +62,6 @@ class Fixed
 
 };
 
-
 std::ostream &operator<<(std::ostream &os ,const Fixed &src);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 #endif

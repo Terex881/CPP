@@ -6,14 +6,12 @@
 /*   By: sdemnati <salaminty123@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 17:48:49 by sdemnati          #+#    #+#             */
-/*   Updated: 2024/07/24 18:50:41 by sdemnati         ###   ########.fr       */
+/*   Updated: 2024/07/29 17:57:45 by sdemnati         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <cstddef>
-#include <iostream>
-#include <string>
 
+#include <iostream>
 
 int main(int ac, char **av)
 {

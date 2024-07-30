@@ -1,9 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sdemnati <salaminty123@gmail.com>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/07/28 13:47:02 by sdemnati          #+#    #+#             */
+/*   Updated: 2024/07/28 13:47:03 by sdemnati         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FIXED_HPP
 #define FIXED_HPP
 
-#include <atomic>
 #include <iostream>
-#include <string>
 #include <cmath>
 
 
