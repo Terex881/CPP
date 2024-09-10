@@ -2,15 +2,13 @@
 #define CLAPTRAP_HPP
 
 
-#include <iostream>
-
-
+#include <iostream> // IWYU pragma: keep
 
 class ClapTrap
 {
 	private:
 		std::string name; //_name
-		int hitPoints;
+		unsigned int hitPoints;
 		int energyPoints;
 		int attackDammage;
 	public:
@@ -26,16 +24,5 @@ class ClapTrap
 		void beRepaired(unsigned int amount);
 
 };
-
-
-
-
-
-
-
-
-
-
-
 
 #endif

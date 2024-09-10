@@ -5,8 +5,11 @@
 
 #include "ClapTrap.hpp"
 
+#include "FragTrap.hpp"
 
-class ScavTrap : public ClapTrap
+
+
+class ScavTrap : public virtual ClapTrap
 {
 	public:
 		ScavTrap();
@@ -14,12 +17,9 @@ class ScavTrap : public ClapTrap
 		ScavTrap &operator=(const ScavTrap &src);
 		ScavTrap(const ScavTrap &copy);
 		ScavTrap(std::string name);
+
 		void guardGate();
 		void attack(const std::string& target);
-
-
-
-
 
 };
 
