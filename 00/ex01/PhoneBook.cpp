@@ -6,12 +6,14 @@
 /*   By: sdemnati <salaminty123@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 17:49:03 by sdemnati          #+#    #+#             */
-/*   Updated: 2024/09/13 17:48:59 by sdemnati         ###   ########.fr       */
+/*   Updated: 2024/09/13 21:52:01 by sdemnati         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 #include "Contact.hpp"
+#include <sstream>
+#include <strstream>
 
 int PhoneBook::index = 0;
 int PhoneBook::new_index = 0;
@@ -29,7 +31,7 @@ std::string PhoneBook::setInput(std::string message)
 			line[i] = ' ';
 		i++;
 	}
-	if (std::cin.eof())
+	if (std::cin.eof()) //
 		exit(0);
 	return line;
 }
@@ -38,7 +40,7 @@ int PhoneBook::onlySpaces(std::string line)
 {
 	int i = 0;
 
-	while(!line.empty() && line[i] == ' ')
+	while(!line.empty() && line[i] == ' ') //
 		i++;
 	if(!line.empty() && line[i] == '\0')
 		return 0;
@@ -81,7 +83,7 @@ void PhoneBook::add(PhoneBook& book)
 
 void  PhoneBook::setLines(std::string word)
 {
-	if (word.length() > 10)
+	if (word.length() > 10) //
 	{
 		for(int i = 0; i < 9; i++)
 			std::cout << word[i];
@@ -89,77 +91,72 @@ void  PhoneBook::setLines(std::string word)
 	}
 	else
 	{
-		std::cout << std::setw(10);
+		std::cout << std::setw(10); //
 		std::cout  << word << "|";
 	}
 }
 
-void PhoneBook::printInfo(int flag)
+void PhoneBook::printTitle(PhoneBook book)
 {
+	int i = 0;
+	std::stringstream str;
+	str << i + 1;
+	std::cout << "--------------------------------------------" << std::endl;
 	std::cout << std::setw(11) << "   Index|";
 	std::cout << std::setw(11) << "Fisrt Name|";
 	std::cout << std::setw(11) << "Last Name|";
-	std::cout << std::setw(11) << "Nick Name|";
+	std::cout << std::setw(11) << "Nick Name|" << std::endl;
 
-	if(flag == 2)
+	while(i < book.new_index && i < 8)
 	{
-
-		std::cout << std::setw(11) << "Phone Num|";
-		std::cout << std::setw(11) << "Dark Secr|";
+		setLines(std::to_string(i + 1)); //
+		printFull(book, i, 2);
+		std::cout << std::endl << "--------------------------------------------" << std::endl;
+		i++;
 	}
-	std::cout << std::endl;
 }
 
 void PhoneBook::printFull(PhoneBook book, int n, int flag)
 {
-	setLines(book.person[n].getFirst());
-	setLines(book.person[n].getLast());
-	setLines(book.person[n].getNick());
-	if (flag == 1)
+	if (flag == 2)
 	{
-		setLines(book.person[n].getNumber());
-		setLines(book.person[n].getSecret());
+		setLines(book.person[n].getFirst());
+		setLines(book.person[n].getLast());
+		setLines(book.person[n].getNick());
 	}
-	std::cout << std::endl;
 
+	else if(flag == 1)
+	{
+		std::cout << "First name   : " << book.person[n].getFirst() << std::endl;
+		std::cout << "Last name    : " << book.person[n].getLast() << std::endl;
+		std::cout << "Nick name    : " << book.person[n].getNick() << std::endl;
+		std::cout << "Number phone : " << book.person[n].getNumber() << std::endl;
+		std::cout << "Dark secret  : " << book.person[n].getSecret() << std::endl;
+	}
 }
 
 void PhoneBook::search(PhoneBook book)
 {
 	std::string line;
-	int i = 0;
-	int number;
+	int number = 0;
 
-	std::cout << "--------------------------------------------" << std::endl;
-	printInfo(1);
-	std::cout << "--------------------------------------------" << std::endl;
-
-	while(i < book.new_index && i < 8)
+	if (book.index == 0)
 	{
-		setLines(std::to_string(i + 1));
-		printFull(book, i, 2);
-		std::cout << "--------------------------------------------" << std::endl;
-		i++;
+		std::cout << "-----------[ THE PHONEBOOK IS EMPTY ]-----------" << std::endl;
+		return;
 	}
-	if (book.index > 0)
+	printTitle(book);
+	std::cout << "PLEASE ENTER THE INDEX" << std::endl << "Index :";
+	std::getline(std::cin, line);
+	std::stringstream str(line);
+	str >> number;
+
+
+	if (number > 8 || number > book.new_index || number <= 0)
 	{
-		std::cout << "PLEASE ENTER THE INDEX" << std::endl;
-		std::cout << "Index :";
-
-		std::getline(std::cin, line);
-		number = std::atoi(line.c_str());
-		if (number > 8 || number > book.new_index || number <= 0)
-		{
-			std::cout << std::endl << "THE INDEX IS OUT OF THE RANGE" << std::endl << std::endl;
-			return ;
-		}
-
-		std::cout << "------------------------------------------------------------------" << std::endl;
-		printInfo(2);
-		std::cout << "------------------------------------------------------------------" << std::endl;
-		setLines(std::to_string(number));
-		printFull(book, number - 1, 1);
-		std::cout << "------------------------------------------------------------------" << std::endl;
+		std::cout << std::endl << "THE INDEX IS OUT OF THE RANGE" << std::endl << std::endl;
+		return ;
 	}
-	return ;
+
+	printFull(book, number - 1, 1);
 }

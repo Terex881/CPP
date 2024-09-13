@@ -6,7 +6,7 @@
 /*   By: sdemnati <salaminty123@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 18:00:58 by sdemnati          #+#    #+#             */
-/*   Updated: 2024/07/30 19:33:54 by sdemnati         ###   ########.fr       */
+/*   Updated: 2024/09/13 20:47:06 by sdemnati         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,7 @@ int main (int ac, char **av)
 	(void)av;
 	if(ac != 1)
 		return (1);
-	std::cout << "[ WELCOME TO MY AWESOME PHONBOOK ]" << std::endl;
-	std::cout << "----------------------------------" << std::endl;
+	std::cout << "-----------[ WELCOME TO MY AWESOME PHONBOOK ]-----------" << std::endl;
 
 	while(1)
 	{

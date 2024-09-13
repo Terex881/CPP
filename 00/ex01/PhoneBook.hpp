@@ -6,7 +6,7 @@
 /*   By: sdemnati <salaminty123@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 17:49:06 by sdemnati          #+#    #+#             */
-/*   Updated: 2024/07/30 19:34:44 by sdemnati         ###   ########.fr       */
+/*   Updated: 2024/09/13 20:30:17 by sdemnati         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ class PhoneBook
 		int 		onlySpaces(std::string line);
 		int 		checkEmpty(Contact *person, int i);
 		void		setLines(std::string word);
-		void 		printInfo(int flag);
+		void 		printTitle(PhoneBook book);
 		void 		printFull(PhoneBook book, int n, int flag);
 };
 
