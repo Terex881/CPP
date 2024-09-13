@@ -40,6 +40,7 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &src)
 ClapTrap::ClapTrap(const ClapTrap &copy)
 {
 	// std::cout << "ClapTrap Copy Constructor called" << std::endl;
+	
 	*this = copy;
 }
 

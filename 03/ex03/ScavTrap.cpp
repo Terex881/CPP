@@ -35,9 +35,9 @@ ScavTrap::ScavTrap(std::string set_name) : ClapTrap(set_name)
 {
 	std::cout << "ScavTrap Constructor for the name " << this->name << " called" << std::endl;
 
-	this->attackDammage = 20;
-	this->energyPoints = 50;
 	this->hitPoints = 100;
+	this->energyPoints = 50;
+	this->attackDammage = 20;
 }
 
 void ScavTrap::guardGate()

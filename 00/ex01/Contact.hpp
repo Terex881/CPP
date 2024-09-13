@@ -6,7 +6,7 @@
 /*   By: sdemnati <salaminty123@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 19:34:22 by sdemnati          #+#    #+#             */
-/*   Updated: 2024/07/30 19:34:23 by sdemnati         ###   ########.fr       */
+/*   Updated: 2024/09/12 14:39:59 by sdemnati         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ class Contact
 		std::string phone_number;
 		std::string darkest_secret;
 	public:
-
 		std::string getFirst();
 		std::string getLast();
 		std::string getNick();

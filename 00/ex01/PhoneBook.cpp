@@ -6,7 +6,7 @@
 /*   By: sdemnati <salaminty123@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 17:49:03 by sdemnati          #+#    #+#             */
-/*   Updated: 2024/07/30 19:37:26 by sdemnati         ###   ########.fr       */
+/*   Updated: 2024/09/13 17:48:59 by sdemnati         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,13 @@ std::string PhoneBook::setInput(std::string message)
 
 	std::cout << message;
 	std::getline(std::cin, line);
+	int i = 0;
+	while(line[i])
+	{
+		if (line[i] >= 9 && line[i] <= 13)
+			line[i] = ' ';
+		i++;
+	}
 	if (std::cin.eof())
 		exit(0);
 	return line;
@@ -59,13 +66,13 @@ void PhoneBook::add(PhoneBook& book)
 	if (book.index >= 8)
 		book.index = book.index - 8;
 
-	book.person[book.index].setFirst(this->setInput("first name : "));
-	book.person[book.index].setLast(this->setInput("last name : "));
-	book.person[book.index].setNick(this->setInput("nick name : ")) ;
-	book.person[book.index].setNumber(this->setInput("phone number : ")) ;
-	book.person[book.index].setSecret(this->setInput("darkest secret : ")) ;
+	book.person[book.index].setFirst(setInput("first name : "));
+	book.person[book.index].setLast(setInput("last name : "));
+	book.person[book.index].setNick(setInput("nick name : ")) ;
+	book.person[book.index].setNumber(setInput("phone number : ")) ;
+	book.person[book.index].setSecret(setInput("darkest secret : ")) ;
 
-	if (this->checkEmpty(book.person, book.index) == 0)
+	if (checkEmpty(book.person, book.index) == 0)
 	{
 		book.new_index++;
 		book.index++;
@@ -76,42 +83,42 @@ void  PhoneBook::setLines(std::string word)
 {
 	if (word.length() > 10)
 	{
-		for(int i = 0; i < 8; i++)
+		for(int i = 0; i < 9; i++)
 			std::cout << word[i];
 		std::cout << ".|";
 	}
 	else
 	{
-		std::cout << std::setw(9);
+		std::cout << std::setw(10);
 		std::cout  << word << "|";
 	}
 }
 
 void PhoneBook::printInfo(int flag)
 {
-	std::cout << std::setw(10) << "   Index|";
-	std::cout << std::setw(10) << "FisrName|";
-	std::cout << std::setw(10) << "LastName|";
-	std::cout << std::setw(10) << "NickNmae|";
+	std::cout << std::setw(11) << "   Index|";
+	std::cout << std::setw(11) << "Fisrt Name|";
+	std::cout << std::setw(11) << "Last Name|";
+	std::cout << std::setw(11) << "Nick Name|";
 
 	if(flag == 2)
 	{
 
-		std::cout << std::setw(10) << "PhoneNum|";
-		std::cout << std::setw(10) << "DarkSecr|";
+		std::cout << std::setw(11) << "Phone Num|";
+		std::cout << std::setw(11) << "Dark Secr|";
 	}
 	std::cout << std::endl;
 }
 
 void PhoneBook::printFull(PhoneBook book, int n, int flag)
 {
-	this->setLines(book.person[n].getFirst());
-	this->setLines(book.person[n].getFirst());
-	this->setLines(book.person[n].getNick());
+	setLines(book.person[n].getFirst());
+	setLines(book.person[n].getLast());
+	setLines(book.person[n].getNick());
 	if (flag == 1)
 	{
-		this->setLines(book.person[n].getNumber());
-		this->setLines(book.person[n].getSecret());
+		setLines(book.person[n].getNumber());
+		setLines(book.person[n].getSecret());
 	}
 	std::cout << std::endl;
 
@@ -123,15 +130,15 @@ void PhoneBook::search(PhoneBook book)
 	int i = 0;
 	int number;
 
-	std::cout << "----------------------------------------" << std::endl;
-	this->printInfo(1);
-	std::cout << "----------------------------------------" << std::endl;
+	std::cout << "--------------------------------------------" << std::endl;
+	printInfo(1);
+	std::cout << "--------------------------------------------" << std::endl;
 
 	while(i < book.new_index && i < 8)
 	{
-		this->setLines(std::to_string(i + 1));
-		this->printFull(book, i, 2);
-		std::cout << "----------------------------------------" << std::endl;
+		setLines(std::to_string(i + 1));
+		printFull(book, i, 2);
+		std::cout << "--------------------------------------------" << std::endl;
 		i++;
 	}
 	if (book.index > 0)
@@ -147,12 +154,12 @@ void PhoneBook::search(PhoneBook book)
 			return ;
 		}
 
-		std::cout << "------------------------------------------------------------" << std::endl;
-		this->printInfo(2);
-		std::cout << "------------------------------------------------------------" << std::endl;
-		this->setLines(std::to_string(number));
-		this->printFull(book, this->index - 1, 1);
-		std::cout << "------------------------------------------------------------" << std::endl;
+		std::cout << "------------------------------------------------------------------" << std::endl;
+		printInfo(2);
+		std::cout << "------------------------------------------------------------------" << std::endl;
+		setLines(std::to_string(number));
+		printFull(book, number - 1, 1);
+		std::cout << "------------------------------------------------------------------" << std::endl;
 	}
 	return ;
 }

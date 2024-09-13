@@ -8,11 +8,6 @@ ClapTrap::ClapTrap() : name("Default"), hitPoints(10), energyPoints(10), attackD
 
 ClapTrap::ClapTrap(std::string set_name):name(set_name), hitPoints(10), energyPoints(10), attackDammage(0)
 {
-	// this->name = set_name;
-	// this->attackDammage = 0;
-	// this->hitPoints = 10;
-	// this->energyPoints = 10;
-
 	std::cout << "ClapTrap Constructor for the name " <<  this->name <<  " called" << std::endl;
 }
 
@@ -24,7 +19,7 @@ ClapTrap::~ClapTrap()
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &src)
 {
-	// std::cout << "ClapTrap Assignation operator called" << std::endl;
+	std::cout << "ClapTrap Assignation operator called" << std::endl;
 
 	if(this == &src)
 		return *this;
@@ -39,7 +34,7 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &src)
 
 ClapTrap::ClapTrap(const ClapTrap &copy)
 {
-	// std::cout << "ClapTrap Copy Constructor called" << std::endl;
+	std::cout << "ClapTrap Copy Constructor called" << std::endl;
 	*this = copy;
 }
 

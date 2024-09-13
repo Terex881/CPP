@@ -6,7 +6,7 @@
 /*   By: sdemnati <salaminty123@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 17:49:11 by sdemnati          #+#    #+#             */
-/*   Updated: 2024/07/24 18:27:56 by sdemnati         ###   ########.fr       */
+/*   Updated: 2024/09/13 16:39:48 by sdemnati         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,12 @@ int Account::getNbAccounts()
 {
 	return _nbAccounts;
 }
+
 int Account::getNbDeposits()
 {
 	return _totalNbDeposits;
 }
+
 int Account::getTotalAmount()
 {
 	return _totalAmount;

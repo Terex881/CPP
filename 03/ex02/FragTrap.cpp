@@ -44,6 +44,5 @@ FragTrap &FragTrap::operator=(const FragTrap &copy)
 
 void FragTrap::highFivesGuys(void)
 {
-	std::cout << "HHHHHHHH\n";
-
+	std::cout << "FragTrap from ClapTrap " << this->name << " says: HIGH FIVE EVERYONE! ------------------------------" << std::endl;
 }

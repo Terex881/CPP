@@ -6,7 +6,7 @@
 /*   By: sdemnati <salaminty123@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 17:48:49 by sdemnati          #+#    #+#             */
-/*   Updated: 2024/07/29 17:57:45 by sdemnati         ###   ########.fr       */
+/*   Updated: 2024/09/13 16:40:15 by sdemnati         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,5 @@ int main(int ac, char **av)
 		}
 	}
 	std::cout << std::endl;
+	return (0);
 }
