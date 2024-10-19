@@ -6,7 +6,7 @@
 /*   By: sdemnati <salaminty123@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/28 13:39:50 by sdemnati          #+#    #+#             */
-/*   Updated: 2024/07/28 13:40:03 by sdemnati         ###   ########.fr       */
+/*   Updated: 2024/09/21 12:20:02 by sdemnati         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,10 @@ class Fixed
 {
 	private:
 		int fixed_point;
-		static const int frac_bits;
+		static const int frac_bits = 8;
 	public:
 		Fixed();
 		Fixed(const Fixed& copy);
-
 		Fixed& operator = (const Fixed& src);
 		~Fixed();
 

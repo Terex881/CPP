@@ -6,12 +6,11 @@
 /*   By: sdemnati <salaminty123@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/28 13:47:16 by sdemnati          #+#    #+#             */
-/*   Updated: 2024/07/28 13:47:20 by sdemnati         ###   ########.fr       */
+/*   Updated: 2024/09/21 13:19:52 by sdemnati         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-
 
 int main( void )
 {
@@ -22,7 +21,6 @@ int main( void )
 	std::cout << a << std::endl;
 	std::cout << a++ << std::endl;
 	std::cout << a << std::endl;
-	
 	std::cout << b << std::endl;
 	std::cout << Fixed::max( a, b ) << std::endl;
 	return 0;

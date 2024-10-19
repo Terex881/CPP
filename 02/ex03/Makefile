@@ -1,6 +1,7 @@
 NAME = Fixed
 
 CC = c++
+
 FLAG = -Wall -Wextra -Werror -std=c++98
 
 OBJ = main.o Fixed.o bsp.o Point.o

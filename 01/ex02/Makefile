@@ -1,6 +1,7 @@
 NAME = BRAIN
 
 CC = c++
+
 FLAG = -Wall -Wextra -Werror -std=c++98
 
 OBJ = main.o

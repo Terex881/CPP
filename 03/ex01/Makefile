@@ -1,9 +1,11 @@
 NAME = ScavTrap
 
 CC = c++
+
 FLAG = -Wall -Wextra -Werror -std=c++98
 
 OBJ = main.o ClapTrap.o ScavTrap.o
+
 all: $(NAME)
 
 $(NAME): $(OBJ)
@@ -19,4 +21,3 @@ fclean: clean
 	rm -rf $(NAME)
 
 re: fclean all
-

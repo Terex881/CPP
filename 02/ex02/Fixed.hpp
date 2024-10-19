@@ -6,7 +6,7 @@
 /*   By: sdemnati <salaminty123@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/28 13:47:02 by sdemnati          #+#    #+#             */
-/*   Updated: 2024/07/28 13:47:03 by sdemnati         ###   ########.fr       */
+/*   Updated: 2024/09/21 12:19:34 by sdemnati         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,11 @@
 #include <iostream>
 #include <cmath>
 
-
-
 class Fixed
 {
 	private:
 		int fixed_point;
-		static const int frac_bits;
+		static const int frac_bits = 8;
 	public:
 		Fixed();
 		~Fixed();
@@ -54,35 +52,12 @@ class Fixed
 		float operator*(Fixed fixed) const;
 		float operator/(Fixed fixed) const;
 
-		Fixed operator++();
-		Fixed operator--();
+		Fixed &operator++();
+		Fixed &operator--();
 		Fixed operator++(int);
 		Fixed operator--(int);
-
 };
 
-
 std::ostream &operator<<(std::ostream &os ,const Fixed &src);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 #endif

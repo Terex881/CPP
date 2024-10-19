@@ -1,6 +1,7 @@
 NAME = VIOLANCE
 
 CC = c++
+
 FLAG = -Wall -Wextra -Werror -std=c++98
 
 OBJ = main.o HumanA.o HumanB.o Weapon.o

@@ -1,6 +1,7 @@
 NAME = ClapTrap
 
 CC = c++
+
 FLAG = -Wall -Wextra -Werror -std=c++98
 
 OBJ = main.o ClapTrap.o
@@ -20,4 +21,3 @@ fclean: clean
 	rm -rf $(NAME)
 
 re: fclean all
-

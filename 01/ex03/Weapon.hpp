@@ -6,7 +6,7 @@
 /*   By: sdemnati <salaminty123@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/27 14:40:17 by sdemnati          #+#    #+#             */
-/*   Updated: 2024/07/27 15:43:15 by sdemnati         ###   ########.fr       */
+/*   Updated: 2024/09/16 09:30:07 by sdemnati         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,8 @@ class Weapon
 {
 	private:
 		std::string type;
-
 	public:
-		const std::string& getType () const;
+		const std::string& getType();
 		void setType(std::string new_type);
 		Weapon(std::string type);
 };

@@ -6,7 +6,7 @@
 /*   By: sdemnati <salaminty123@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/28 13:41:26 by sdemnati          #+#    #+#             */
-/*   Updated: 2024/07/28 13:41:28 by sdemnati         ###   ########.fr       */
+/*   Updated: 2024/09/21 13:26:07 by sdemnati         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 int main( void )
 {
-
 	Fixed a;
 	Fixed const b( 10 );
 	Fixed const c( 42.42f );

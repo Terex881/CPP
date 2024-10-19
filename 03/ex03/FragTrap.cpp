@@ -1,6 +1,16 @@
-#include "ClapTrap.hpp"
-#include "FragTrap.hpp"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   FragTrap.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sdemnati <salaminty123@gmail.com>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/22 09:03:18 by sdemnati          #+#    #+#             */
+/*   Updated: 2024/10/01 08:49:49 by sdemnati         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+#include "FragTrap.hpp"
 
 FragTrap::FragTrap()
 {
@@ -12,16 +22,16 @@ FragTrap::FragTrap()
 
 FragTrap::~FragTrap()
 {
-	std::cout << "FragTrap Deconstructor for " << this->name << " called" << std::endl;
+	std::cout << "FragTrap Deconstructor called" << std::endl;
 }
 
-FragTrap::FragTrap(std::string name) : ClapTrap(name)
+FragTrap::FragTrap(std::string name)
 {
-	std::cout << "FragTrap Constructor for the name " << this->name << " called" << std::endl;
-
+	this->name = name;
 	this->attackDammage = 30;
 	this->energyPoints = 100;
 	this->hitPoints = 100;
+	std::cout << "FragTrap Constructor called" << std::endl;
 }
 
 FragTrap::FragTrap(const FragTrap &src)
@@ -31,18 +41,16 @@ FragTrap::FragTrap(const FragTrap &src)
 
 FragTrap &FragTrap::operator=(const FragTrap &copy)
 {
-	std::cout << "FragTrap Assignation operator called" << std::endl;
-
+	if (this == &copy)
+		return *this;
 	this->name = copy.name;
 	this->attackDammage = copy.attackDammage;
 	this->energyPoints = copy.energyPoints;
-	this->hitPoints = copy.energyPoints;
+	this->hitPoints = copy.hitPoints;
 	return *this;
 }
 
-
 void FragTrap::highFivesGuys(void)
 {
-	std::cout << "FragTrap from ClapTrap " << this->name << " says: HIGH FIVE EVERYONE! ------------------------------" << std::endl;
-
+	std::cout << "FragTrap from ClapTrap " << this->name << " says: HIGH FIVE EVERYONE!" << std::endl;
 }

@@ -1,15 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sdemnati <salaminty123@gmail.com>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/22 09:03:15 by sdemnati          #+#    #+#             */
+/*   Updated: 2024/10/01 08:41:22 by sdemnati         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef DIAMONDTRAP_HPP
 #define DIAMONDTRAP_HPP
 
-#include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
 
-
-class DiamondTrap : public ScavTrap , public FragTrap
+class DiamondTrap : public FragTrap, public ScavTrap
 {
 	private:
-		std::string _name;
+		std::string name;
 	public:
 		DiamondTrap();
 		~DiamondTrap();
@@ -17,18 +27,8 @@ class DiamondTrap : public ScavTrap , public FragTrap
 		DiamondTrap &operator=(const DiamondTrap  &src);
 		DiamondTrap(const DiamondTrap &copy);
 
-		using ScavTrap::attack;
-		// void attack(const std::string &target);
+		void attack(const std::string &target);
 		void whoAmI();
-	
 };
-
-
-
-
-
-
-
-
 
 #endif

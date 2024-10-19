@@ -1,10 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sdemnati <salaminty123@gmail.com>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/22 09:04:10 by sdemnati          #+#    #+#             */
+/*   Updated: 2024/09/29 15:43:13 by sdemnati         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef SCAVTRAP_HPP
 #define SCAVTRAP_HPP
 
-
-
 #include "ClapTrap.hpp"
-
 
 class ScavTrap : public ClapTrap
 {
@@ -13,14 +22,10 @@ class ScavTrap : public ClapTrap
 		~ScavTrap();
 		ScavTrap &operator=(const ScavTrap &src);
 		ScavTrap(const ScavTrap &copy);
+
 		ScavTrap(std::string name);
 		void guardGate();
 		void attack(const std::string& target);
-
-
-
-
-
 };
 
 #endif

@@ -1,7 +1,8 @@
 NAME = Harl
 
 CC = c++
-# FLAG = -Wall -Wextra -Werror -std=c++98
+
+FLAG = -Wall -Wextra -Werror -std=c++98
 
 OBJ = main.o Harl.o
 

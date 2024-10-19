@@ -6,18 +6,15 @@
 /*   By: sdemnati <salaminty123@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/28 13:45:44 by sdemnati          #+#    #+#             */
-/*   Updated: 2024/07/28 13:59:37 by sdemnati         ###   ########.fr       */
+/*   Updated: 2024/09/21 09:49:04 by sdemnati         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FIXED_HPP
 #define FIXED_HPP
 
-
 #include <iostream>
 #include <cmath>
-
-
 
 class Fixed
 {
@@ -55,8 +52,8 @@ class Fixed
 		float operator*(Fixed fixed) const;
 		float operator/(Fixed fixed) const;
 
-		Fixed operator++();
-		Fixed operator--();
+		Fixed &operator++();
+		Fixed &operator--();
 		Fixed operator++(int);
 		Fixed operator--(int);
 

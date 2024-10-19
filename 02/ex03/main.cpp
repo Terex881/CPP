@@ -6,7 +6,7 @@
 /*   By: sdemnati <salaminty123@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/28 13:45:51 by sdemnati          #+#    #+#             */
-/*   Updated: 2024/07/28 13:49:58 by sdemnati         ###   ########.fr       */
+/*   Updated: 2024/09/21 11:09:06 by sdemnati         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,14 @@
 
 int main(void)
 {
+	Point const a(4, 3);
+	Point const b(2, 1);
+	Point const c(6, 1);
+	Point const p(4, 2);
 
-	Point const a(6, 4);
-	Point const b(10, 4);
-	Point const c(8, 7);
-	Point const p(7, 5.5);
-
-    if (bsp(a, b, c, p))
-        std::cout << "Point point is inside the triangle" << std::endl;
-    else
-        std::cout << "Point point is outside the triangle" << std::endl;
+	if (bsp(a, b, c, p))
+		std::cout << "Point point is inside the triangle" << std::endl;
+	else
+		std::cout << "Point point is outside the triangle" << std::endl;
+	return (0);
 }

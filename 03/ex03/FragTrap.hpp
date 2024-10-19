@@ -1,38 +1,33 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sdemnati <salaminty123@gmail.com>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/22 09:03:20 by sdemnati          #+#    #+#             */
+/*   Updated: 2024/10/01 08:43:22 by sdemnati         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FRAGTRAP_H
 #define FRAGTRAP_H
 
-
-
-
 #include "ClapTrap.hpp"
-
 
 class FragTrap : public virtual ClapTrap
 {
+	protected:
+		int attackDammage;
+		unsigned int hitPoints;
 	public:
 		FragTrap();
 		~FragTrap();
-
 		FragTrap &operator=(const FragTrap &src);
 		FragTrap(const FragTrap &copy);
 
 		FragTrap(std::string _name);
-
-
 		void highFivesGuys(void);
-
-
-
 };
 
-
 #endif
-// Constructors
-// DiamondTrap::DiamondTrap(): ClapTrap("defaultDT_clap_trap")
-// {
-// 	this->_name = "defaultDT";
-// 	this->_hit_pts = FragTrap::_hit_pts;
-// 	this->_energy_pts = ScavTrap::_energy_pts;
-// 	this->_attack_dmg = FragTrap::_attack_dmg;
-// 	std::cout << "DiamondTrap Default Constructor called" << std::endl;
-// }
