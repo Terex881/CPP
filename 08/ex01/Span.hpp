@@ -1,31 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sdemnati <sdemnati@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/26 21:20:43 by sdemnati          #+#    #+#             */
-/*   Updated: 2024/11/12 13:48:49 by sdemnati         ###   ########.fr       */
+/*   Created: 2024/11/08 17:30:46 by sdemnati          #+#    #+#             */
+/*   Updated: 2024/11/11 13:28:17 by sdemnati         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Serializer.hpp"
-#include "Data.hpp"
+#pragma once
 
-int main()
+#include <iostream>
+#include <vector>
+
+class Span
 {
-    Data *d = new Data;
-    d->n = 10;
-    d->name = "Terex";
-
-    uintptr_t p =  Serializer::serialize(d);
-    Data *d1 = Serializer::deserialize(p);
-
-    std::cout << d1->n << std::endl;
-    std::cout << d1->name << std::endl;
-	
-	delete d;
-    
-    return (0);
-}
+	private:
+		unsigned int _n;
+		std::vector<int> _v;
+		Span();
+	public:
+		~Span();
+		Span(const Span &);
+		Span &operator=(const Span &);
+		
+		Span(unsigned int n);
+		void addNumber(unsigned int number);
+		unsigned int shortestSpan();
+		unsigned int longestSpan();
+		void fillSpan(std::vector<int>::iterator b, std::vector<int>::iterator e);
+};

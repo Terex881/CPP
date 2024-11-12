@@ -5,27 +5,26 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sdemnati <sdemnati@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/26 21:20:43 by sdemnati          #+#    #+#             */
-/*   Updated: 2024/11/12 13:48:49 by sdemnati         ###   ########.fr       */
+/*   Created: 2024/11/08 17:30:41 by sdemnati          #+#    #+#             */
+/*   Updated: 2024/11/11 10:30:12 by sdemnati         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Serializer.hpp"
-#include "Data.hpp"
+#include "Span.hpp"
 
 int main()
 {
-    Data *d = new Data;
-    d->n = 10;
-    d->name = "Terex";
-
-    uintptr_t p =  Serializer::serialize(d);
-    Data *d1 = Serializer::deserialize(p);
-
-    std::cout << d1->n << std::endl;
-    std::cout << d1->name << std::endl;
-	
-	delete d;
-    
-    return (0);
+	try{ 
+		Span sp = Span(5);
+		sp.addNumber(6);
+		sp.addNumber(3);
+		sp.addNumber(17);
+		sp.addNumber(9);
+		sp.addNumber(11);
+		std::cout << sp.shortestSpan() << std::endl;
+		std::cout << sp.longestSpan() << std::endl;
+	} catch(const std::exception &e){
+		std::cout << e.what() << std::endl;
+	}
+	return 0;
 }

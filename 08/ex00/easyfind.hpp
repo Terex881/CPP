@@ -1,31 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   easyfind.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sdemnati <sdemnati@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/26 21:20:43 by sdemnati          #+#    #+#             */
-/*   Updated: 2024/11/12 13:48:49 by sdemnati         ###   ########.fr       */
+/*   Created: 2024/09/08 14:29:28 by sdemnati          #+#    #+#             */
+/*   Updated: 2024/11/12 09:24:04 by sdemnati         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Serializer.hpp"
-#include "Data.hpp"
+#pragma once
+#include <iostream>
 
-int main()
-{
-    Data *d = new Data;
-    d->n = 10;
-    d->name = "Terex";
+#include <vector>
+#include <list>
+#include <deque>
 
-    uintptr_t p =  Serializer::serialize(d);
-    Data *d1 = Serializer::deserialize(p);
-
-    std::cout << d1->n << std::endl;
-    std::cout << d1->name << std::endl;
-	
-	delete d;
-    
-    return (0);
+template <typename T> void easyfind(T arr, int j){
+	if (std::find(arr.begin(), arr.end(), j) == arr.end())
+		throw std::invalid_argument("not found");
+	std::cout << "found" << std::endl;
 }
